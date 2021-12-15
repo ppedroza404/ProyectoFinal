@@ -108,6 +108,7 @@ bool Lista_Curso::agregar(Curso* _pCurso)
 	else {
 		setCab(nuevo);
 		agregado = true;
+		setLargo(getLargo() + 1);
 	}
 
 	return agregado;

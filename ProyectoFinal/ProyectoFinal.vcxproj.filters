@@ -39,6 +39,9 @@
     <ClCompile Include="Lista_Curso.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lista_Duende.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Curso.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Lista_Curso.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lista_Duende.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

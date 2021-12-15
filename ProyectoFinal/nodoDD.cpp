@@ -4,9 +4,10 @@ nodoDD::nodoDD()
 {
 }
 
-nodoDD::nodoDD(Duende* duende)
+nodoDD::nodoDD(Duende* _duende)
 {
-	this->duende = NULL;
+	this->duende = _duende;
+	this->sgte = NULL;
 }
 
 Duende* nodoDD::getDuende()

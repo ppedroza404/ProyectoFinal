@@ -6,6 +6,8 @@
 #include "Duende.h"
 #include "Matricula.h"
 #include "Lista_Curso.h"
+#include "Lista_Duende.h"
+
 using namespace std;
 
 int main()
@@ -20,10 +22,19 @@ int main()
     Curso curso7 = Curso("Projecto5", 10, 30);
 
 
-    Duende duende1 = Duende(1, "Happy", 8, false);
-    Duende duende2 = Duende(2, "Grumpy", 10, true);
+    Duende duende1 = Duende("Happy", 8, false);
+    Duende duende2 = Duende("Grumpy", 10, false);
+    Duende duende3 = Duende("Mario", 36, true);
+    Duende duende4 = Duende("Luigi", 35, true);
 
-    Lista_Curso l1 = Lista_Curso();
+    Lista_Duende ld = Lista_Duende();
+    ld.agregar(duende1.getPDuende());
+    ld.agregar(duende2.getPDuende());
+    ld.agregar(duende3.getPDuende());
+    ld.agregar(duende4.getPDuende());
+    //ld.desplegarBecados();
+    cout<< ld.getDuende(1)->toString() << endl;
+    /*Lista_Curso l1 = Lista_Curso();
     l1.agregar(curso1.getPCurso());
     l1.agregar(curso3.getPCurso());
     l1.agregar(curso2.getPCurso());
@@ -42,7 +53,7 @@ int main()
     cout << l1.eliminar(4) << endl;
     l1.desplegar();
     l1.agregar(curso4.getPCurso());
-    l1.desplegar();
+    l1.desplegar();*/
 
 
     // cout << curso1.toString();

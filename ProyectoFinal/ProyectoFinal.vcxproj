@@ -142,6 +142,7 @@
     <ClCompile Include="Curso.cpp" />
     <ClCompile Include="Duende.cpp" />
     <ClCompile Include="Lista_Curso.cpp" />
+    <ClCompile Include="Lista_Duende.cpp" />
     <ClCompile Include="Matricula.cpp" />
     <ClCompile Include="nodoDD.cpp" />
     <ClCompile Include="nodoDM.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Curso.h" />
     <ClInclude Include="Duende.h" />
     <ClInclude Include="Lista_Curso.h" />
+    <ClInclude Include="Lista_Duende.h" />
     <ClInclude Include="Matricula.h" />
     <ClInclude Include="nodoDD.h" />
     <ClInclude Include="nodoDM.h" />

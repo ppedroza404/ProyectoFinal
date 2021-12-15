@@ -11,9 +11,9 @@ Duende::Duende()
 	this->estadoBecado = false;
 }
 
-Duende::Duende(int _id, string _nombre, int _edad, bool _becado)
+Duende::Duende(string _nombre, int _edad, bool _becado)
 {
-	this->id = _id;
+	this->id = 0;
 	this->nombre = _nombre;
 	this->edad = _edad;
 	this->estadoBecado = _becado;
