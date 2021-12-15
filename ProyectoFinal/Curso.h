@@ -14,7 +14,8 @@ private:
 
 public:
 	Curso(); // constructor vacio.
-	Curso(int id,string nombre,int creditos,int horas); // constructor con parametros.
+	~Curso();
+	Curso(string nombre,int creditos,int horas); // constructor con parametros.
 
 	// Getters.
 	int getId();
@@ -27,7 +28,7 @@ public:
 	void setId(int);
 	void setNombre(string);
 	void setCreditos(int);
-	void sethoras(int);
+	void setHoras(int);
 
 	// Output.
 	string toString();

@@ -11,9 +11,13 @@ Curso::Curso()
 	this->horas = 0;
 }
 
-Curso::Curso(int _id, string _nombre, int _creditos, int _horas)
+Curso::~Curso()
 {
-	this->id = _id;
+}
+
+Curso::Curso( string _nombre, int _creditos, int _horas)
+{
+	this->id = 0;
 	this->nombre = _nombre;
 	this->creditos = _creditos;
 	this->horas = _horas;
@@ -60,7 +64,7 @@ void Curso::setCreditos(int _creditos)
 	this->creditos = _creditos;
 }
 
-void Curso::sethoras(int _horas)
+void Curso::setHoras(int _horas)
 {
 	this->horas = _horas;
 }
