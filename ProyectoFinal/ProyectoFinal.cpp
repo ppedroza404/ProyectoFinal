@@ -22,12 +22,17 @@ int main()
     // curso1.setCreditos(18);
     // curso1.sethoras(18);
     // cout << curso1.toString(3);
-    Duende duende1 = Duende(01,"Happy",8,false);
+    Duende duende1 = Duende(1,"Happy",8,false);
+    Duende duende2 = Duende(2, "Grumpy", 10, true);
     cout << duende1.toString(1) << endl;
 
-    Matricula matricula1 = Matricula(1,"ana",90,curso1.getPCurso(),duende1.getPDuende());
-    cout << matricula1.toString()<< endl;
-    cout << matricula1.toString(1);
+    Matricula matricula1 = Matricula(1,"ana",curso1.getPCurso(),duende1.getPDuende(), 90);
+    Matricula matricula2 = Matricula(2,"Mario",curso2.getPCurso(),duende1.getPDuende(),70);
+    cout << matricula1.toString() << endl;
+    cout << matricula2.toString() << endl;
+    matricula2.setDuende(duende2.getPDuende());
+    cout << matricula1.toString(1) << endl;
+    cout << matricula2.toString(2) << endl;
     cin;
 
 

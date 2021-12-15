@@ -17,7 +17,7 @@ private:
 	
 public:
 	Matricula(); // constructor vacio.
-	Matricula(int,string,int,Curso*,Duende*); // constructor con parametros.
+	Matricula(int id,string profesor ,Curso* _pCurso,Duende* _pDuende,int nota); // constructor con parametros.
 
 	// Getters.
 	int getId();

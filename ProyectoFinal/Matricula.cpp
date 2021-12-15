@@ -10,7 +10,7 @@ Matricula::Matricula()
 	this->duende = NULL;
 }
 
-Matricula::Matricula(int _id, string _profesor, int _nota, Curso* _pCurso, Duende* _pDuende)
+Matricula::Matricula(int _id, string _profesor, Curso* _pCurso, Duende* _pDuende, int _nota)
 {
 	this->id = _id;
 	this->profesor = _profesor;
