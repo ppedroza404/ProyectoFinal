@@ -139,7 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Curso.cpp" />
+    <ClCompile Include="Duende.cpp" />
+    <ClCompile Include="Matricula.cpp" />
+    <ClCompile Include="nodoDD.cpp" />
+    <ClCompile Include="nodoDM.cpp" />
+    <ClCompile Include="nodoS.cpp" />
     <ClCompile Include="ProyectoFinal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Curso.h" />
+    <ClInclude Include="Duende.h" />
+    <ClInclude Include="Matricula.h" />
+    <ClInclude Include="nodoDD.h" />
+    <ClInclude Include="nodoDM.h" />
+    <ClInclude Include="nodoS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

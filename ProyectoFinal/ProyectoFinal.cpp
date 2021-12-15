@@ -2,10 +2,34 @@
 //
 
 #include <iostream>
+#include "Curso.h"
+#include "Duende.h"
+#include "Matricula.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Curso curso1 = Curso(01,"Mate01",3,5);
+    Curso curso2 = Curso(02, "Progra01", 6, 12);
+    Curso curso3 = Curso(03, "Patrones", 5, 10);
+    Curso curso4 = Curso(04, "Projecto", 10, 30);
+
+    // cout << curso1.toString();
+    // curso1.setId(9);
+    cout << curso1.toString(1) << endl;
+    // curso1.setNombre("Ingles02");
+    // cout << curso1.toString(2);
+    // curso1.setCreditos(18);
+    // curso1.sethoras(18);
+    // cout << curso1.toString(3);
+    Duende duende1 = Duende(01,"Happy",8,false);
+    cout << duende1.toString(1) << endl;
+
+    Matricula matricula1 = Matricula(1,"ana",90,curso1.getPCurso(),duende1.getPDuende());
+    cout << matricula1.toString()<< endl;
+    cout << matricula1.toString(1);
+    cin;
+
 
 }
 
