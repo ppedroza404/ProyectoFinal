@@ -2,24 +2,25 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include "Duende.h"
 using namespace std;
 
 class nodoDD
 {
 private:
-	int dato;
+	Duende* duende;
 	nodoDD* sgte;
 	nodoDD* anterior;
 
 public:
 	nodoDD();
-	nodoDD(int); // puntero al siguiente nodo;
+	nodoDD(Duende* duende); // puntero al siguiente nodo;
 
-	int getDato();
+	Duende* getDuende();
 	nodoDD* getSgte();
 	nodoDD* getAnterior();
 
-	void setDato(int dato);
+	void setDuende(Duende* duende);
 	void setSgte(nodoDD* sgte);
 	void setAnterior(nodoDD* anterior);
 };
