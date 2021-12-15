@@ -2,20 +2,23 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include "Curso.h"
+
+
 using namespace std;
 
 class nodoS
 {
 private:
-	int dato;
+	Curso* curso;
 	nodoS* sgte;
 public:
 	nodoS();
-	nodoS(int); // puntero al siguiente nodo;
+	nodoS(Curso* curso); // puntero al siguiente nodo;
 
-	int getDato();
+	Curso* getCurso();
 	nodoS* getSgte();
 
-	void setDato(int dato);
+	void setCurso(Curso* curso);
 	void setSgte(nodoS* sgte);
 };

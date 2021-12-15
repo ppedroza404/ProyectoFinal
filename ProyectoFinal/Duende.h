@@ -13,7 +13,7 @@ private:
 	bool estadoBecado;
 public:
 	Duende(); // constructor vacio.
-	Duende(int, string, int, bool); // constructor con parametros.
+	Duende(int id, string nombre, int edad, bool estadoBecado); // constructor con parametros.
 
 	// Getters.
 	int getId();
