@@ -2,24 +2,29 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include "Duende.h"
+#include "Curso.h"
 using namespace std;
 
 class nodoDM
 {
 private:
-	int dato;
+	Curso* curso;
+	Duende* duende;
 	nodoDM* sgte;
 	nodoDM* anterior;
 
 public:
 	nodoDM();
-	nodoDM(int); // puntero al siguiente nodo;
+	nodoDM(Curso* curso,Duende* duende); // puntero al siguiente nodo;
 
-	int getDato();
+	Curso* getCurso();
+	Duende* getDuende();
 	nodoDM* getSgte();
 	nodoDM* getAnterior();
 
-	void setDato(int dato);
+	void setCurso(Curso* curso);
+	void setDuende(Duende* duende);
 	void setSgte(nodoDM* sgte);
 	void setAnterior(nodoDM* anterior);
 };
