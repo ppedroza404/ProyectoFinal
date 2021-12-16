@@ -126,6 +126,7 @@ int main()
                 }
                 else {
                     cout << "\nEl duende " + to_string(idDuende) + " No esta registrado";
+
                 }
                 
                 break;
