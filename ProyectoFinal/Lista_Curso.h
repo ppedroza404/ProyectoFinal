@@ -31,6 +31,7 @@ public:
 	void Actualizar(int idCurso, string nombre, int creditos, int horas);
 	bool existe(int idCurso);
 	Curso* getCurso(int idCurso);
+	Lista_Curso* getPunteroLista();
 
 
 

@@ -7,6 +7,7 @@
 #include "Matricula.h"
 #include "Lista_Curso.h"
 #include "Lista_Duende.h"
+#include "Lista_Matricula.h"
 
 using namespace std;
 
@@ -21,7 +22,6 @@ int main()
     Curso curso6 = Curso("Projecto4", 10, 30);
     Curso curso7 = Curso("Projecto5", 10, 30);
 
-
     Duende duende1 = Duende("Happy", 8, false);
     Duende duende2 = Duende("Grumpy", 10, false);
     Duende duende3 = Duende("Mario", 36, true);
@@ -32,9 +32,9 @@ int main()
     ld.agregar(duende2.getPDuende());
     ld.agregar(duende3.getPDuende());
     ld.agregar(duende4.getPDuende());
-    //ld.desplegarBecados();
+    ld.desplegarBecados();
     cout<< ld.getDuende(1)->toString() << endl;
-    /*Lista_Curso l1 = Lista_Curso();
+    Lista_Curso l1 = Lista_Curso();
     l1.agregar(curso1.getPCurso());
     l1.agregar(curso3.getPCurso());
     l1.agregar(curso2.getPCurso());
@@ -53,27 +53,44 @@ int main()
     cout << l1.eliminar(4) << endl;
     l1.desplegar();
     l1.agregar(curso4.getPCurso());
-    l1.desplegar();*/
+    l1.desplegar();
 
 
-    // cout << curso1.toString();
-    // curso1.setId(9);
-    // cout << curso1.toString(1) << endl;
-    // // curso1.setNombre("Ingles02");
-    // // cout << curso1.toString(2);
-    // // curso1.setCreditos(18);
-    // // curso1.sethoras(18);
-    // // cout << curso1.toString(3);
-    // 
-    // cout << duende1.toString(1) << endl;
-    // 
-    // Matricula matricula1 = Matricula(1,"ana",curso1.getPCurso(),duende1.getPDuende(), 90);
-    // Matricula matricula2 = Matricula(2,"Mario",curso2.getPCurso(),duende1.getPDuende(),70);
-    // cout << matricula1.toString() << endl;
-    // cout << matricula2.toString() << endl;
-    // matricula2.setDuende(duende2.getPDuende());
-    // cout << matricula1.toString(1) << endl;
-    // cout << matricula2.toString(2) << endl;
+     cout << curso1.toString();
+     curso1.setId(9);
+     cout << curso1.toString(1) << endl;
+     curso1.setNombre("Ingles02");
+     cout << curso1.toString(2);
+     curso1.setCreditos(18);
+     curso1.setHoras(18);
+     cout << curso1.toString(3);
+     
+     cout << duende1.toString(1) << endl;
+     
+     Matricula matricula1 = Matricula(1,"ana",curso1.getPCurso(),duende1.getPDuende(), 90);
+     Matricula matricula2 = Matricula(2,"Mario",curso2.getPCurso(),duende1.getPDuende(),70);
+     cout << matricula1.toString() << endl;
+     cout << matricula2.toString() << endl;
+     matricula2.setDuende(duende2.getPDuende());
+     cout << matricula1.toString(1) << endl;
+     cout << matricula2.toString(2) << endl;
+     cout << "===========================" << endl;
+     cout << "Matriculas!!!!" << endl;
+     Lista_Matricula lm1 = Lista_Matricula();
+
+     lm1.matricular(ld.getPunteroLista(),l1.getPunteroLista(),"Maria",1,3);
+     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
+     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
+     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
+     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
+     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
+     lm1.desplegar();
+     cout << "Actualizado!!!!" << endl;
+     cout << lm1.Actualizar(0, "Antionio") << endl;
+     cout << lm1.Actualizar(35,"Antionio") << endl;
+     cout << lm1.Actualizar(3, "jUAN") << endl;
+     lm1.desplegar();
+
     cin;
 
 

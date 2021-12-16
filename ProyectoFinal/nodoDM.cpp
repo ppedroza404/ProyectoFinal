@@ -14,14 +14,9 @@ nodoDM::nodoDM(Matricula* _matricula)
 	this->anterior = NULL;
 }
 
-Curso* nodoDM::getCurso()
+Matricula* nodoDM::getMatricula()
 {
-	return this->matricula->getPCurso();
-}
-
-Duende* nodoDM::getDuende()
-{
-	return this->matricula->getPDuende();
+	return this->matricula;
 }
 
 nodoDM* nodoDM::getSgte()

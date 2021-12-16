@@ -52,6 +52,11 @@ Duende* Lista_Duende::getDuende(int idDuende)
 	return duende;
 }
 
+Lista_Duende* Lista_Duende::getPunteroLista()
+{
+	return this;
+}
+
 bool Lista_Duende::existe(int idDuende)
 {
 	bool existe = false;
@@ -152,7 +157,7 @@ bool Lista_Duende::eliminar(int idDuende)
 void Lista_Duende::desplegar()
 {
 	nodoDD* aux = getCab();
-	std::cout << "Lista de duendes:" << std::endl;
+	std::cout << "Lista de Matriculas:" << std::endl;
 	for (int i = 1; i <= getLargo(); i++) {
 		cout << aux->getDuende()->toString() << endl;
 		aux = aux->getSgte();

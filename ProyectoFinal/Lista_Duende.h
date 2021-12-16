@@ -28,6 +28,7 @@ public:
 	void Actualizar(int idDuende, string nombre, int edad, bool condicion_becado);
 	bool existe(int idDuende);
 	Duende* getDuende(int idDuende);
+	Lista_Duende* getPunteroLista();
 
 };
 
