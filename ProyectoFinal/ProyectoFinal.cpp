@@ -139,10 +139,6 @@ int main()
             cin >> opcion;
             system("CLS");
 
-            cout << "\nIngrese una opcion: ";
-            cin >> opcion;
-            system("CLS");
-
             switch (opcion) {
             case 1:
 
@@ -211,9 +207,6 @@ int main()
             system("CLS");
 
             switch (opcion) {
-                cout << "\nIngrese una opcion: ";
-                cin >> opcion;
-                system("CLS");
 
                 switch (opcion) {
                 case 1:
