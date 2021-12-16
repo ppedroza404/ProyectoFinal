@@ -13,28 +13,233 @@ using namespace std;
 
 int main()
 {
-    Curso curso0 = Curso("Mate01",3,5);
-    Curso curso1 = Curso("Progra01", 6, 12);
-    Curso curso2 = Curso("Patrones", 5, 10);
-    Curso curso3 = Curso("Projecto1", 10, 30);
-    Curso curso4 = Curso("Projecto2", 10, 30);
-    Curso curso5 = Curso("Projecto3", 10, 30);
-    Curso curso6 = Curso("Projecto4", 10, 30);
-    Curso curso7 = Curso("Projecto5", 10, 30);
 
-    Duende duende1 = Duende("Happy", 8, false);
-    Duende duende2 = Duende("Grumpy", 10, false);
-    Duende duende3 = Duende("Mario", 36, true);
-    Duende duende4 = Duende("Luigi", 35, true);
+    Lista_Curso lc = Lista_Curso();
+    Lista_Duende ld = Lista_Duende();
+    Lista_Curso lm = Lista_Curso();
+
+    Duende duende = Duende();
+    Curso curso = Curso();
+
+    int opcion;
+    bool repetir = true;
+
+    //DATOS DEL DUENDE
+
+    int idDuende;
+    string nombre;
+    int edad;
+    bool condicion_becado = false;
+
+    //DATOS DEL CURSO
+    int idCurso;
+    int creditos;
+    int horas;
+
+
+    do {
+
+        cout << "\n\n************************" << endl;
+        cout << "**  Menu de Principal**" << endl;
+        cout << "************************" << endl;
+        cout << "1. Menu de duendes" << endl;
+        cout << "2. Menu de cursos" << endl;
+        cout << "3. Menu de matriculas" << endl;
+        cout << "4. Salir" << endl;
+
+        cout << "\nIngrese una opcion: ";
+        cin >> opcion;
+
+        if (opcion == 1) {
+
+            //Texto del menú que se verá cada vez
+            cout << "\n\n************************" << endl;
+            cout << "**  Menu de Duendes **" << endl;
+            cout << "************************" << endl;
+            cout << "1. Agregar nuevo duende" << endl;
+            cout << "2. Modificar duende" << endl;
+            cout << "3. Buscar duende" << endl;
+            cout << "4. Eliminar duende" << endl;
+            cout << "5. Ver lista de duendes" << endl;
+            cout << "6. Ver lista de duendes becados" << endl;
+            cout << "0. Retroceder" << endl;
+
+            cout << "\nIngrese una opcion: ";
+            cin >> opcion;
+            system("CLS");
+
+            switch (opcion) {
+            case 1:
+
+                cout << "\nIngrese el nombre del duende: ";
+                cin >> nombre;
+
+                cout << "\nIngrese la edad del duende: ";
+                cin >> edad;
+
+                cout << "\nIngrese la condicion de becado del duende (0-Falso, 1-Verdadero): ";
+                cin >> condicion_becado;
+
+                duende.setNombre(nombre), duende.setEdad(edad), duende.setestadoBecado(condicion_becado);
+                ld.agregar(duende.getPDuende());
+                break;
+
+            case 2:
+                cout << "\nIngrese el id del duende a modificar: ";
+                cin >> idDuende;
+
+                cout << "\nIngrese el nombre del duende: ";
+                cin >> nombre;
+
+                cout << "\nIngrese la edad del duende: ";
+                cin >> edad;
+
+                cout << "\nIngrese la condicion de becado del duende (1-Verdadero, 2-Falso): ";
+                cin >> condicion_becado;
+
+                ld.Actualizar(idDuende, nombre, edad, condicion_becado);
+                break;
+
+            case 3:
+                cout << "\nIngrese el id del duende: ";
+                cin >> idDuende;
+
+                cout << ld.getDuende(idDuende) << endl;
+                break;
+            case 4:
+                cout << "\nIngrese el id del duende a eliminar: ";
+                cin >> idDuende;
+
+                ld.eliminar(idDuende);;
+                break;
+            case 5:
+                ld.desplegar();
+                break;
+            case 6:
+                ld.desplegarBecados();
+                break;
+            case 0:
+                repetir = true;
+                break;
+            }
+
+        }
+        else if (opcion == 2) {
+            //Texto del menú que se verá cada vez
+            cout << "\n\n************************" << endl;
+            cout << "**  Menu de Cursos **" << endl;
+            cout << "************************" << endl;
+            cout << "1. Agregar un nuevo curso" << endl;
+            cout << "2. Actualizar un curso" << endl;
+            cout << "3. Buscar curso" << endl;
+            cout << "4. Eliminar curso" << endl;
+            cout << "5. Ver lista de cursos" << endl;
+            cout << "0. Retroceder" << endl;
+
+            cout << "\nIngrese una opcion: ";
+            cin >> opcion;
+            system("CLS");
+
+            cout << "\nIngrese una opcion: ";
+            cin >> opcion;
+            system("CLS");
+
+            switch (opcion) {
+            case 1:
+
+                cout << "\nIngrese el nombre del curso: ";
+                cin >> nombre;
+
+                cout << "\nIngrese la cantidad de creditos del curso: ";
+                cin >> creditos;
+
+                cout << "\nIngrese la cantidad de horas del curso: ";
+                cin >> horas;
+
+                curso.setNombre(nombre), curso.setCreditos(creditos), curso.setHoras(horas);
+                lc.agregar(curso.getPCurso());
+                break;
+
+            case 2:
+                cout << "\nIngrese el id del curso a modificar: ";
+                cin >> idCurso;
+
+                cout << "\nIngrese el nombre del curso: ";
+                cin >> nombre;
+
+                cout << "\nIngrese la cantidad de creditos del curso: ";
+                cin >> creditos;
+
+                cout << "\nIngrese la cantidad de horas del curso: ";
+                cin >> horas;
+
+                lc.Actualizar(idCurso, nombre, creditos, horas);
+                break;
+
+            case 3:
+                cout << "\nIngrese el id del curso: ";
+                cin >> idCurso;
+
+                cout << lc.getCurso(idCurso) << endl;
+                break;
+            case 4:
+                cout << "\nIngrese el id del curso a eliminar: ";
+                cin >> idCurso;
+
+                lc.eliminar(idCurso);
+                break;
+            case 5:
+                lc.desplegar();
+                break;
+            case 0:
+                repetir = true;
+                break;
+            }
+        }
+        else if (opcion == 3) {
+
+            cout << "\n\n************************" << endl;
+            cout << "**  Menu de Matriculas**" << endl;
+            cout << "************************" << endl;
+            cout << "1. Agregar una nueva matricula" << endl;
+            cout << "2. Retirar matricula" << endl;
+            cout << "3. Asignar nota a curso" << endl;
+            cout << "4. Ver notas" << endl;
+            cout << "0. Retroceder" << endl;
+
+            cout << "\nIngrese una opcion: ";
+            cin >> opcion;
+            system("CLS");
+
+            switch (opcion) {
+                cout << "\nIngrese una opcion: ";
+                cin >> opcion;
+                system("CLS");
+
+                switch (opcion) {
+                case 1:
+
+                    cout << "\nIngrese el nombre del profesor asociado al curso: ";
+                    cin >> nombre;
+
+                    cout << "\nIngrese el id del curso: ";
+                    cin >> creditos;
+
+
+                    lc.agregar(curso.getPCurso());
+                    break;
+                case 2:
+                    cout << "\nIngrese el id del matricula a retirar: ";
+                    cin >> idCurso;
 
     Lista_Duende ld = Lista_Duende();
     ld.agregar(duende1.getPDuende());
     ld.agregar(duende2.getPDuende());
     ld.agregar(duende3.getPDuende());
     ld.agregar(duende4.getPDuende());
-    ld.desplegarBecados();
+    //ld.desplegarBecados();
     cout<< ld.getDuende(1)->toString() << endl;
-    Lista_Curso l1 = Lista_Curso();
+    /*Lista_Curso l1 = Lista_Curso();
     l1.agregar(curso1.getPCurso());
     l1.agregar(curso3.getPCurso());
     l1.agregar(curso2.getPCurso());
@@ -53,46 +258,43 @@ int main()
     cout << l1.eliminar(4) << endl;
     l1.desplegar();
     l1.agregar(curso4.getPCurso());
-    l1.desplegar();
+    l1.desplegar();*/
 
 
-     cout << curso1.toString();
-     curso1.setId(9);
-     cout << curso1.toString(1) << endl;
-     curso1.setNombre("Ingles02");
-     cout << curso1.toString(2);
-     curso1.setCreditos(18);
-     curso1.setHoras(18);
-     cout << curso1.toString(3);
-     
-     cout << duende1.toString(1) << endl;
-     
-     Matricula matricula1 = Matricula(1,"ana",curso1.getPCurso(),duende1.getPDuende(), 90);
-     Matricula matricula2 = Matricula(2,"Mario",curso2.getPCurso(),duende1.getPDuende(),70);
-     cout << matricula1.toString() << endl;
-     cout << matricula2.toString() << endl;
-     matricula2.setDuende(duende2.getPDuende());
-     cout << matricula1.toString(1) << endl;
-     cout << matricula2.toString(2) << endl;
-     cout << "===========================" << endl;
-     cout << "Matriculas!!!!" << endl;
-     Lista_Matricula lm1 = Lista_Matricula();
-
-     lm1.matricular(ld.getPunteroLista(),l1.getPunteroLista(),"Maria",1,3);
-     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
-     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
-     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
-     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
-     lm1.matricular(ld.getPunteroLista(), l1.getPunteroLista(), "Mario", 2, 1);
-     lm1.desplegar();
-     cout << "Actualizado!!!!" << endl;
-     cout << lm1.Actualizar(0, "Antionio") << endl;
-     cout << lm1.Actualizar(35,"Antionio") << endl;
-     cout << lm1.Actualizar(3, "jUAN") << endl;
-     lm1.desplegar();
-
+    // cout << curso1.toString();
+    // curso1.setId(9);
+    // cout << curso1.toString(1) << endl;
+    // // curso1.setNombre("Ingles02");
+    // // cout << curso1.toString(2);
+    // // curso1.setCreditos(18);
+    // // curso1.sethoras(18);
+    // // cout << curso1.toString(3);
+    // 
+    // cout << duende1.toString(1) << endl;
+    // 
+    // Matricula matricula1 = Matricula(1,"ana",curso1.getPCurso(),duende1.getPDuende(), 90);
+    // Matricula matricula2 = Matricula(2,"Mario",curso2.getPCurso(),duende1.getPDuende(),70);
+    // cout << matricula1.toString() << endl;
+    // cout << matricula2.toString() << endl;
+    // matricula2.setDuende(duende2.getPDuende());
+    // cout << matricula1.toString(1) << endl;
+    // cout << matricula2.toString(2) << endl;
     cin;
 
+                    lc.Actualizar(idCurso, nombre, creditos, horas);
+                    break;
+                case 4:
+                    lc.desplegar();
+                    break;
+                case 0:
+                    repetir = true;
+                    break;
+                }
+            }
+        } else if (opcion == 4) {
+            repetir = false;
+        }
+    } while (repetir);
 
 }
 
