@@ -17,8 +17,7 @@ public:
 	nodoDM();
 	nodoDM(Matricula* pMatricula); // puntero al siguiente nodo;
 
-	Curso* getCurso();
-	Duende* getDuende();
+	Matricula* getMatricula();
 	nodoDM* getSgte();
 	nodoDM* getAnterior();
 

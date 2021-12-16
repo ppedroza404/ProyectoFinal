@@ -36,6 +36,11 @@ Curso* Lista_Curso::getCurso(int idCurso)
 	return curso;
 }
 
+Lista_Curso* Lista_Curso::getPunteroLista()
+{
+	return this;
+}
+
 Lista_Curso::Lista_Curso()
 {
 	this->cab = NULL;
