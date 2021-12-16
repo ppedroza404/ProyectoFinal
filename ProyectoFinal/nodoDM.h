@@ -2,21 +2,20 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include "Duende.h"
-#include "Curso.h"
+#include "Matricula.h"
+
 using namespace std;
 
 class nodoDM
 {
 private:
-	Curso* curso;
-	Duende* duende;
+	Matricula* matricula;
 	nodoDM* sgte;
 	nodoDM* anterior;
 
 public:
 	nodoDM();
-	nodoDM(Curso* curso,Duende* duende); // puntero al siguiente nodo;
+	nodoDM(Matricula* pMatricula); // puntero al siguiente nodo;
 
 	Curso* getCurso();
 	Duende* getDuende();

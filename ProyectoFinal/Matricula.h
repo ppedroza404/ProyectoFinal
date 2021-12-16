@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "Curso.h"
 #include "Duende.h"
+
 using namespace std;
 
 class Matricula

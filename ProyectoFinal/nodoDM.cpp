@@ -2,28 +2,26 @@
 
 nodoDM::nodoDM()
 {
-	this->curso = NULL;
-	this->duende = NULL;
+	this->matricula = NULL;
 	this->sgte = NULL;
 	this->anterior = NULL;
 }
 
-nodoDM::nodoDM(Curso* curso, Duende* duende)
+nodoDM::nodoDM(Matricula* _matricula)
 {
-	this->curso = curso;
-	this->duende = duende;
+	this->matricula = _matricula;
 	this->sgte = NULL;
 	this->anterior = NULL;
 }
 
 Curso* nodoDM::getCurso()
 {
-	return this->curso;
+	return this->matricula->getPCurso();
 }
 
 Duende* nodoDM::getDuende()
 {
-	return this->duende;
+	return this->matricula->getPDuende();
 }
 
 nodoDM* nodoDM::getSgte()
@@ -38,12 +36,12 @@ nodoDM* nodoDM::getAnterior()
 
 void nodoDM::setCurso(Curso* _curso)
 {
-	this->curso = _curso;
+	this->matricula->setCurso(_curso);
 }
 
 void nodoDM::setDuende(Duende* _duende)
 {
-	this->duende = _duende;
+	this->matricula->setDuende(_duende);
 }
 
 void nodoDM::setSgte(nodoDM* _sgte)
