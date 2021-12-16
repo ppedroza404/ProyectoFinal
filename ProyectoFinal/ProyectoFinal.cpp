@@ -7,6 +7,7 @@
 #include "Matricula.h"
 #include "Lista_Curso.h"
 #include "Lista_Duende.h"
+#include "Lista_Matricula.h"
 
 using namespace std;
 
@@ -15,10 +16,7 @@ int main()
 
     Lista_Curso lc = Lista_Curso();
     Lista_Duende ld = Lista_Duende();
-    Lista_Curso lm = Lista_Curso();
-
-    Duende duende = Duende();
-    Curso curso = Curso();
+    Lista_Matricula lm = Lista_Matricula();
 
     int opcion;
     bool repetir = true;
@@ -79,8 +77,7 @@ int main()
                 cout << "\nIngrese la condicion de becado del duende (0-Falso, 1-Verdadero): ";
                 cin >> condicion_becado;
 
-                duende.setNombre(nombre), duende.setEdad(edad), duende.setestadoBecado(condicion_becado);
-                ld.agregar(duende.getPDuende());
+                ld.agregar(new Duende(nombre, edad, condicion_becado));
                 break;
 
             case 2:
@@ -151,8 +148,7 @@ int main()
                 cout << "\nIngrese la cantidad de horas del curso: ";
                 cin >> horas;
 
-                curso.setNombre(nombre), curso.setCreditos(creditos), curso.setHoras(horas);
-                lc.agregar(curso.getPCurso());
+                lc.agregar(new Curso(nombre, creditos, horas));
                 break;
 
             case 2:
@@ -219,7 +215,7 @@ int main()
                 cout << "\nIngrese el id del duende: ";
                 cin >> horas;
 
-                lc.agregar(curso.getPCurso());
+                //lc.agregar(curso.getPCurso());
                 break;
             case 2:
                 cout << "\nIngrese el id del matricula a retirar: ";
