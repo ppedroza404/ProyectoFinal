@@ -3,16 +3,14 @@
 bool Lista_Curso::existe(int idCurso)
 {
 	bool existe = false;	
-	nodoS* nuevo = new nodoS();
 
 	if (!esVacia()) {
-		nodoS* primero = getCab();
-		while (primero->getSgte() != NULL && !existe)
-		{
-			if (primero->getCurso()->getId() == idCurso) {
+		nodoS* aux = getCab();
+		for (int i = 1; i <= getLargo(); i++) {
+			if (aux->getCurso()->getId() == idCurso) {
 				existe = true;
 			}
-			primero = primero->getSgte();
+			aux = aux->getSgte();
 		}
 	}
 	return existe;
@@ -25,7 +23,7 @@ Curso* Lista_Curso::getCurso(int idCurso)
 
 	if (!esVacia()) {
 		nodoS* aux = getCab();
-		while (aux->getSgte() != NULL && curso == NULL)
+		while (aux != NULL && curso == NULL)
 		{
 			if (aux->getCurso()->getId() == idCurso) {
 				curso = aux->getCurso();

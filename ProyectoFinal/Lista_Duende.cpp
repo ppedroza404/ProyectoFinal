@@ -60,7 +60,6 @@ Lista_Duende* Lista_Duende::getPunteroLista()
 bool Lista_Duende::existe(int idDuende)
 {
 	bool existe = false;
-	nodoDD* nuevo = new nodoDD();
 
 	if (!esVacia()) {
 		nodoDD* aux = getCab();

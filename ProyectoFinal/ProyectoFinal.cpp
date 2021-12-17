@@ -30,6 +30,7 @@ int main()
     bool condicion_becado = false;
 
     //DATOS DEL CURSO
+    Curso* NuevoCurso;
     int idCurso;
     int creditos;
     int horas;
@@ -169,36 +170,54 @@ int main()
                 cout << "\nIngrese la cantidad de horas del curso: ";
                 cin >> horas;
 
-                lc.agregar(new Curso(nombre, creditos, horas));
+                NuevoCurso = new Curso(nombre, creditos, horas);
+                lc.agregar(NuevoCurso);
                 break;
 
             case 2:
                 cout << "\nIngrese el id del curso a modificar: ";
                 cin >> idCurso;
 
-                cout << "\nIngrese el nombre del curso: ";
-                cin >> nombre;
+                if (lc.existe(idCurso)) {
+                    cout << "\nIngrese el nombre del curso: ";
+                    cin >> nombre;
 
-                cout << "\nIngrese la cantidad de creditos del curso: ";
-                cin >> creditos;
+                    cout << "\nIngrese la cantidad de creditos del curso: ";
+                    cin >> creditos;
 
-                cout << "\nIngrese la cantidad de horas del curso: ";
-                cin >> horas;
+                    cout << "\nIngrese la cantidad de horas del curso: ";
+                    cin >> horas;
 
-                lc.Actualizar(idCurso, nombre, creditos, horas);
+                    lc.Actualizar(idCurso, nombre, creditos, horas);
+                }
+                else {
+                    cout << "\nEl curso " + to_string(idCurso) + " No esta registrado";
+                }
+
                 break;
 
             case 3:
                 cout << "\nIngrese el id del curso: ";
                 cin >> idCurso;
+               
+                if (lc.existe(idCurso)) {
+                    cout << lc.getCurso(idCurso)->toString() << endl;
+                }else {
+                    cout << "\nEl curso " + to_string(idCurso) + " No esta registrado";
+                }
 
-                cout << lc.getCurso(idCurso) << endl;
                 break;
             case 4:
                 cout << "\nIngrese el id del curso a eliminar: ";
                 cin >> idCurso;
 
-                lc.eliminar(idCurso);
+                if (lc.existe(idCurso)) {
+                    lc.eliminar(idCurso);
+                }
+                else {
+                    cout << "\nEl curso " + to_string(idCurso) + " No esta registrado";
+                }
+                
                 break;
             case 5:
                 lc.desplegar();
@@ -213,7 +232,7 @@ int main()
             cout << "\n\n************************" << endl;
             cout << "**  Menu de Matriculas**" << endl;
             cout << "************************" << endl;
-            cout << "1. Agregar una nueva matricula" << endl;
+            cout << "1. Matricular duende" << endl;
             cout << "2. Retirar matricula" << endl;
             cout << "3. Asignar nota a curso" << endl;
             cout << "4. Ver notas" << endl;
