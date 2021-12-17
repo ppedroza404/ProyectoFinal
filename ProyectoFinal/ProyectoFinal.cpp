@@ -35,6 +35,11 @@ int main()
     int creditos;
     int horas;
 
+    //DATOS DE LA Matricula
+    Matricula* NuevaMatricula;
+    int idMatricula;
+    string profesor;
+    int nota;
 
     do {
 
@@ -102,8 +107,6 @@ int main()
                 else {
                     cout << "\nEl duende " + to_string(idDuende) + " No esta registrado";
                 }
-
-
                 break;
 
             case 3:
@@ -138,6 +141,9 @@ int main()
                 break;
             case 0:
                 repetir = true;
+                break;
+            default:
+                cout << "Opcion Incorrecta";
                 break;
             }
 
@@ -225,6 +231,9 @@ int main()
             case 0:
                 repetir = true;
                 break;
+            default:
+                cout << "Opcion Incorrecta";
+                break;
             }
         }
         else if (opcion == 3) {
@@ -234,8 +243,9 @@ int main()
             cout << "************************" << endl;
             cout << "1. Matricular duende" << endl;
             cout << "2. Retirar matricula" << endl;
-            cout << "3. Asignar nota a curso" << endl;
+            cout << "3. Cambiar Prodesor" << endl;
             cout << "4. Ver notas" << endl;
+            cout << "5. Asignar nota" << endl;
             cout << "0. Retroceder" << endl;
 
             cout << "\nIngrese una opcion: ";
@@ -246,50 +256,81 @@ int main()
             switch (opcion) {
             case 1:
 
-                cout << "\nIngrese el nombre del profesor asociado al curso: ";
-                cin >> nombre;
+                cout << "\nIngrese el id del duende: ";
+                cin >> idDuende;
 
                 cout << "\nIngrese el id del curso: ";
-                cin >> creditos;
+                cin >> idCurso;
 
-                cout << "\nIngrese el id del duende: ";
-                cin >> horas;
 
-                //lc.agregar(curso.getPCurso());
+                if (ld.existe(idDuende) && lc.existe(idCurso)) {
+                    cout << "\nIngrese el nombre del profesor: ";
+                    cin >> profesor;
+                    lm.matricular(ld.getPunteroLista(), lc.getPunteroLista(), profesor, idCurso, idDuende);
+                }
+                else {
+                    cout << "\nNo se puede realizar la matricula";
+                }
+                
                 break;
             case 2:
                 cout << "\nIngrese el id del matricula a retirar: ";
-                cin >> idCurso;
+                cin >> idMatricula;
 
-                cout << lc.getCurso(idCurso) << endl;
+                if (lm.retirar(idMatricula)) {
+                    cout << "\nLa matricula " + to_string(idMatricula) + " fue retirada";
+                }
+                else {
+                    cout << "\nLa matricula " + to_string(idMatricula) + " No esta registrada";
+                }                
                 break;
-
 
             case 3:
-                cout << "\nIngrese el id del curso a modificar: ";
-                cin >> idCurso;
+                cout << "\nIngrese el id de la matricula a modificar: ";
+                cin >> idMatricula;
 
-                cout << "\nIngrese el nombre del curso: ";
-                cin >> nombre;
+                cout << "\nIngrese el nombre del profesor: ";
+                cin >> profesor;
 
-                cout << "\nIngrese la cantidad de creditos del curso: ";
-                cin >> creditos;
+                if (lm.Actualizar(idMatricula, profesor)) {
+                    cout << "\nLa matricula " + to_string(idMatricula) + " fue Actualizada";
+                }
+                else {
+                    cout << "\nLa matricula " + to_string(idMatricula) + " No esta registrada";
+                }
 
-                cout << "\nIngrese la cantidad de horas del curso: ";
-                cin >> horas;
-
-                lc.Actualizar(idCurso, nombre, creditos, horas);
                 break;
             case 4:
-                lc.desplegar();
+                lm.desplegar();
                 break;
+            case 5:
+                cout << "\nIngrese el id de la matricula a modificar: ";
+                cin >> idMatricula;
+
+                cout << "\nIngrese la Nota: ";
+                cin >> nota;
+
+                if (lm.asignarNota(idMatricula, nota)) {
+                    cout << "\nLa nota de la matricula fue actualizada";
+                }
+                else {
+                    cout << "\nLa nota de la matricula no fue actualizada";
+                }
             case 0:
                 repetir = true;
                 break;
+            default:
+                cout << "Opcion Incorrecta";
+                break;
             }
+
         }
         else if (opcion == 4) {
             repetir = false;
+        }
+        else {
+        cout << "\nOpcion Incorrecta ";
+        opcion = 1;
         }
     } while (repetir);
 

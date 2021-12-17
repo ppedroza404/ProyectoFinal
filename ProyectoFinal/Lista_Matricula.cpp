@@ -83,14 +83,40 @@ bool Lista_Matricula::matricular(Lista_Duende* _lDuendes, Lista_Curso* _lCursos,
 	return agregado;
 }
 
-bool Lista_Matricula::asignarNota(int idMatricula, int _nota) // implementar
+bool Lista_Matricula::asignarNota(int idMatricula, int _nota)
 {
-	return false;
+	bool actualizado = false;
+	Matricula* matriculaTemp = getMatricula(idMatricula);
+
+	if (matriculaTemp->getPCurso() != NULL) {
+		matriculaTemp->setNota(_nota);
+		actualizado = true;
+	}
+	return actualizado;
 }
 
-bool Lista_Matricula::retirar(int idMatricula) // implementar
+bool Lista_Matricula::retirar(int idMatricula)
 {
-	return false;
+	bool eliminado = false;
+	nodoDM* aux = dirDato(idMatricula);
+	if (aux != NULL) {
+
+		if (aux == getCab()) {
+			setCab(aux->getSgte());
+		}
+		else {
+			aux->getAnterior()->setSgte(aux->getSgte());
+		}
+
+		if (aux->getSgte() != NULL) {
+			aux->getSgte()->setAnterior(aux->getAnterior());
+		}
+
+		delete aux;
+		setLargo(getLargo() - 1);
+		eliminado = true;
+	}
+	return eliminado;
 }
 
 void Lista_Matricula::desplegar()
@@ -113,9 +139,10 @@ bool Lista_Matricula::existe(int _idMatricula)
 	bool existe = false;
 	nodoDM* aux = getCab();
 
-	while (aux->getSgte() != NULL && !existe) {
-		aux = aux->getSgte();
+	while (aux != NULL && !existe) {
+		
 		if (aux->getMatricula()->getId() == _idMatricula) { existe = true; }
+		aux = aux->getSgte();
 	}
 
 	return existe;
@@ -126,7 +153,7 @@ Matricula* Lista_Matricula::getMatricula(int _idMatricula)
 	nodoDM* aux = getCab();
 	Matricula* ans = new Matricula();
 
-	while (aux->getSgte() != NULL) {
+	while (aux != NULL) {
 		
 		if (aux != NULL && aux->getMatricula()->getId() == _idMatricula) {
 			ans = aux->getMatricula();

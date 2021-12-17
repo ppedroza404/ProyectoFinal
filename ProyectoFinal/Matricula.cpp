@@ -61,7 +61,13 @@ void Matricula::setProfesor(string _profesor)
 
 void Matricula::setNota(int _nota)
 {
-	this->nota = _nota;
+	this->nota = this->nota + _nota;
+	if (this->nota >= 100) {
+		this->nota = 100;
+	}
+	if (this->nota < 0) {
+		this->nota = 0;
+	}
 }
 
 void Matricula::setCurso(Curso* _pCurso)
